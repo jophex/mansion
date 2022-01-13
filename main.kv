@@ -1,0 +1,167 @@
+ScreenManager:
+    name: manager
+    id: manager
+    MDScreen:
+        FloatLayout:
+            MDLabel:
+                text: app.temporary
+                font_size: 35
+                halign: 'center'
+                pos_hint: {'center_x': .5, 'center_y': .96}
+
+            MDLabel:
+                text: app.user_input
+                font_size: 35
+                halign: 'center'
+                pos_hint: {'center_x': .5, 'center_y': .9}
+
+            MDLabel:
+                text: app.answer
+                font_size: 35
+                halign: 'center'
+                pos_hint: {'center_x': .7, 'center_y': .8}
+
+            MDIcon:
+                icon: app.operators
+                font_size: 35
+                halign: 'center'
+                pos_hint: {'center_x': .2, 'center_y': .8}
+
+            MDIconButton:
+                icon: 'plus'
+                halign: 'center'
+                pos_hint: {'center_x': .2, 'center_y': .7}
+                on_release:
+                    app.first('add')
+                    app.operators = 'plus'
+
+            MDIconButton:
+                icon: 'minus'
+                halign: 'center'
+                pos_hint: {'center_x': .4, 'center_y': .7}
+                on_release:
+                    app.first('minus')
+                    app.operators = 'minus'
+
+            MDIconButton:
+                icon: 'alpha-x'
+                halign: 'center'
+                pos_hint: {'center_x': .6, 'center_y': .7}
+                on_release:
+                    app.first('multi')
+                    app.operators = 'alpha-x'
+
+            MDIconButton:
+                icon: 'division'
+                halign: 'center'
+                pos_hint: {'center_x': .8, 'center_y': .7}
+                on_release:
+                    app.first('div')
+                    app.operators = 'division'
+
+            MDIconButton:
+                icon: 'exponent'
+                halign: 'center'
+                pos_hint: {'center_x': .92, 'center_y': .7}
+                on_release:
+                    app.first('exponent')
+                    app.operators = 'exponent'
+
+            MDIconButton:
+                icon: 'numeric-9'
+                halign: 'center'
+                pos_hint: {'center_x': .2, 'center_y': .6}
+                on_release:
+                    app.user_input = app.user_input + '9'
+
+            MDIconButton:
+                icon: 'numeric-8'
+                halign: 'center'
+                pos_hint: {'center_x': .4, 'center_y': .6}
+                on_release:
+                    app.user_input = app.user_input + '8'
+
+            MDIconButton:
+                icon: 'numeric-7'
+                halign: 'center'
+                pos_hint: {'center_x': .6, 'center_y': .6}
+                on_release:
+                    app.user_input = app.user_input + '7'
+
+            MDIconButton:
+                icon: 'numeric-6'
+                halign: 'center'
+                pos_hint: {'center_x': .8, 'center_y': .6}
+                on_release:
+                    app.user_input = app.user_input + '6'
+
+            MDIconButton:
+                icon: 'numeric-5'
+                halign: 'center'
+                pos_hint: {'center_x': .2, 'center_y': .5}
+                on_release:
+                    app.user_input = app.user_input + '5'
+
+            MDIconButton:
+                icon: 'numeric-4'
+                halign: 'center'
+                pos_hint: {'center_x': .4, 'center_y': .5}
+                on_release:
+                    app.user_input = app.user_input + '4'
+
+            MDIconButton:
+                icon: 'numeric-3'
+                halign: 'center'
+                pos_hint: {'center_x': .6, 'center_y': .5}
+                on_release:
+                    app.user_input = app.user_input + '3'
+
+            MDIconButton:
+                icon: 'numeric-2'
+                halign: 'center'
+                pos_hint: {'center_x': .8, 'center_y': .5}
+                on_release:
+                    app.user_input = app.user_input + '2'
+
+            MDIconButton:
+                icon: 'numeric-1'
+                halign: 'center'
+                pos_hint: {'center_x': .2, 'center_y': .4}
+                on_release:
+                    app.user_input = app.user_input + '1'
+
+            MDIconButton:
+                icon: 'numeric-0'
+                halign: 'center'
+                pos_hint: {'center_x': .4, 'center_y': .4}
+                on_release:
+                    app.user_input = app.user_input + '0'
+
+            MDIconButton:
+                icon: 'decimal'
+                halign: 'center'
+                pos_hint: {'center_x': .6, 'center_y': .4}
+                on_release:
+                    app.first('.')
+                    app.user_input = app.user_input + '.'
+
+            MDIconButton:
+                icon: 'equal'
+                halign: 'center'
+                pos_hint: {'center_x': .8, 'center_y': .4}
+                on_release:
+                    app.second()
+
+            MDIconButton:
+                icon: 'circle-half-full'
+                halign: 'center'
+                pos_hint: {'center_x': .93, 'center_y': .97}
+                on_press:
+                    app.aquilline()
+
+            MDIconButton:
+                icon: 'backspace-outline'
+                halign: 'center'
+                pos_hint: {'center_x': .9, 'center_y': .76}
+                on_press:
+                    app.clear()
